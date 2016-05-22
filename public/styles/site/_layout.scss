@@ -1,0 +1,46 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 0;
+}
+
+h2 {
+	font-size: 22px;
+	margin: 0;
+}
+
+header {
+	height: 5%;
+}
+
+.resource-directory {
+	height: 30%;
+	display: flex;
+	li {
+		list-style: none;
+		padding: 10px;
+	}
+	li:nth-child(even) {
+		background-color: #F3F3F3;
+	}
+	li:nth-child(odd) {
+		background: #FBFBFB;
+	}
+	.categories {
+		width: 35%;
+		overflow: scroll;
+	}
+	.locations {
+		flex-grow: 2;
+		overflow: scroll;
+		.location-detail {
+			color: #8F8F8F;
+		}
+	}
+}
