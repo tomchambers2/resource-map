@@ -5829,33 +5829,54 @@ html, body {
 
 h1 {
   font-size: 30px;
-  margin: 0; }
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase; }
 
 h2 {
   font-size: 22px;
   margin: 0; }
 
 header {
-  height: 5%; }
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between; }
+
+a {
+  color: #000;
+  text-decoration: none; }
 
 .resource-directory {
-  height: 30%;
+  height: calc(40% - 40px);
   display: flex; }
   .resource-directory li {
     list-style: none;
-    padding: 10px; }
-  .resource-directory li:nth-child(even) {
-    background-color: #F3F3F3; }
-  .resource-directory li:nth-child(odd) {
-    background: #FBFBFB; }
+    padding: 10px;
+    cursor: pointer; }
+  .resource-directory li:hover {
+    background: #939393 !important;
+    color: #fff; }
+    .resource-directory li:hover span.location-detail {
+      color: #eee; }
+    .resource-directory li:hover a {
+      color: #fff; }
   .resource-directory .categories {
     width: 35%;
     overflow: scroll; }
+    .resource-directory .categories li:nth-child(even) {
+      background-color: #f2f2f2; }
+    .resource-directory .categories li:nth-child(odd) {
+      background: #f7f7f7; }
   .resource-directory .locations {
     flex-grow: 2;
     overflow: scroll; }
     .resource-directory .locations .location-detail {
       color: #8F8F8F; }
+    .resource-directory .locations li:nth-child(even) {
+      background-color: #f7f7f7; }
+    .resource-directory .locations li:nth-child(odd) {
+      background: #f2f2f2; }
 
 .resource-map {
   height: 60%;

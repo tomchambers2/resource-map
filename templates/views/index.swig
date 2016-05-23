@@ -2,13 +2,20 @@
 
 {% block content %}
 	<header>
-		<h1>Resource Map</h1>
+		<h1>Solidarity Map</h1>
+		<h1><a href="mailto:ldodd099@gmail.com">Contact</a></h1>
 	</header>
 	<div class="resource-map" data-locations="{{locationsString}}"></div>
 	<section class="resource-directory">
 		<div class="categories">
 			{% for category in categories %}
-				<a href="/{{category.slug}}"><li>{{category.name}}</li></a>
+				<li>
+					<a href="/{{category.slug}}">
+						<div>
+							{{category.name}}
+						</div>
+					</a>
+				</li>
 			{% endfor %}
 		</div>
 		<div class="locations">

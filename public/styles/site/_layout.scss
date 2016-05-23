@@ -8,6 +8,8 @@ html, body {
 h1 {
 	font-size: 30px;
 	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
 }
 
 h2 {
@@ -16,31 +18,60 @@ h2 {
 }
 
 header {
-	height: 5%;
+	height: 40px;
+	padding: 5px;
+	display: flex;
+	justify-content: space-between;
 }
 
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+$light-row: hsla(0,0%,97%,1);
+$dark-row: hsla(0,0%,95%,1);
+$hover-row: #939393;
+
 .resource-directory {
-	height: 30%;
+	height: calc(40% - 40px);
 	display: flex;
 	li {
 		list-style: none;
 		padding: 10px;
+		cursor: pointer;
 	}
-	li:nth-child(even) {
-		background-color: #F3F3F3;
-	}
-	li:nth-child(odd) {
-		background: #FBFBFB;
+	li:hover {
+		background: $hover-row !important;
+		color: #fff;
+		span.location-detail {
+			color: #eee;
+		}
+		a {
+			color: #fff;
+		}
 	}
 	.categories {
 		width: 35%;
 		overflow: scroll;
+		li:nth-child(even) {
+			background-color: $dark-row;
+		}
+		li:nth-child(odd) {
+			background: $light-row;
+		}
 	}
 	.locations {
 		flex-grow: 2;
 		overflow: scroll;
 		.location-detail {
 			color: #8F8F8F;
+		}
+		li:nth-child(even) {
+			background-color: $light-row;
+		}
+		li:nth-child(odd) {
+			background: $dark-row;
 		}
 	}
 }

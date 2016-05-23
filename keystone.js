@@ -19,7 +19,7 @@ keystone.init({
 	'brand': 'Solidarity Map',
 
 	'sass': 'public',
-'static': 'public',
+	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'swig',

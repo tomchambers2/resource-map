@@ -21,6 +21,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function(next) {
 		if (req.params.slug) {
 			Category.model.findOne({ slug: req.params.slug }).exec(function(err, result) {
+				if (!result) return res.sendStatus(404);
 				query = { category: result._id }
 				next();
 			});
@@ -35,7 +36,7 @@ exports = module.exports = function (req, res) {
 
 			function improveLocation(location, key, callback) {
 				location._.location.googleLookup('GB', false, function(err, location, result) {
-					locations[key].googleLocation = result;
+					if (!err) locations[key].googleLocation = result;
 					callback();
 				});
 			}
@@ -46,6 +47,12 @@ exports = module.exports = function (req, res) {
 						cb(err);
 					})
 				},
+				function(cb) {
+					locations = locations.filter(function(location) {
+						return location.googleLocation;
+					});
+					cb();
+				}
 			], function(err) {
 				locals.locations = locations;
 				locals.locationsString = JSON.stringify(locations);
